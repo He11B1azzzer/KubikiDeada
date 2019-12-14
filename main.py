@@ -38,14 +38,18 @@ def draw():
         for i in range(len(targets)):
             probs.append(fn.probability(dice,sides,targets[i]))
         filename = str(dice) + "d" + str(sides) + "s" + ".txt"
+        res = ""
+        for i,k in zip(targets,probs):
+                templ_space = "        "
+                temp = len(templ_space)
+                space = ""
+                while temp - len(str(i)) >= 0:
+                    space += " "
+                    temp -= 1
+                res += str(i) + space + "{:^1}        ".format("|") + str(k) + "\n"
         if os.path.exists(os.path.join(os.path.abspath(os.path.dirname(sys.argv[0])), ".\logs",filename)) == False:
             f = open(os.path.join(os.path.abspath(os.path.dirname(sys.argv[0])), ".\logs",filename), "w")
-            for i in range(len(probs)):
-                f.write("\n")
-                f.write(str(targets[i]))
-                f.write("             ")
-                f.write(str(probs[i]))
-                f.write("\n")
+            f.write(res)
             f.close()
         plt.figure("График для числа кубиков {0} с числом сторон равным {1} каждый".format(dice,sides))
         plt.bar(targets,probs)
