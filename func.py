@@ -17,7 +17,6 @@ def generating(coef, power):
         return ans
 
 def probability(dice_number, sides, target):
-    # https://en.wikipedia.org/wiki/Generating_function
     try:
         return round(float(generating([0] + [1] * sides, dice_number)[target]) / (sides ** dice_number), 4)
     except IndexError:
