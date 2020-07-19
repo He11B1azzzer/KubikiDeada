@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'E:\Grand\Coding\Python\prob_dice_mylovechuck\untitled.ui',
-# licensing of 'E:\Grand\Coding\Python\prob_dice_mylovechuck\untitled.ui' applies.
-#
 # Created: Mon Dec  9 22:58:22 2019
 #      by: pyside2-uic  running on PySide2 5.13.2
 #
